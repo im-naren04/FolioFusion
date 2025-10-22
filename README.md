@@ -28,7 +28,6 @@ FolioFusion is a simple Node.js + Express web app that lets users create persona
 1. **Clone this repository**
    ```bash
    https://github.com/im-naren04/FolioFusion.git
-   cd foliofusion
 2. **Install dependencies**
    ```bash
    npm install express body-parser ejs
