@@ -1,0 +1,127 @@
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    /* === MAIN CONTAINER === */
+    section.profile.home {
+      max-width: 800px;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      padding: 2.5rem 3.5rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 50px;
+    }
+
+    section.profile.home:hover {
+      transform: scale(1.02);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    /* === HEADER === */
+    .profile-header h2 {
+      font-size: 2.5rem;
+      color: #0077b6;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-header p {
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    /* === FORM CARD === */
+    .add-section {
+      margin-top: 2rem;
+      padding: 2rem 2.5rem;
+      background: #caf0f8;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .add-section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .add-section input,
+    .add-section textarea {
+      width: 90%;
+      max-width: 500px;
+      display: block;
+      margin: 0.7rem auto;
+      padding: 0.9rem 1rem;
+      border-radius: 12px;
+      border: 1px solid #0077b6;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .add-section input:focus,
+    .add-section textarea:focus {
+      border-color: #023e8a;
+      box-shadow: 0 0 5px rgba(0, 119, 182, 0.4);
+      outline: none;
+    }
+
+    .add-section textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .add-section button {
+      margin-top: 1.5rem;
+      padding: 0.9rem 2.2rem;
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .add-section button:hover {
+      background: #023e8a;
+      transform: scale(1.07);
+    }
+
+    /* === FOOTER TEXT === */
+    .footer-text {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 600px) {
+      section.profile.home {
+        padding: 1.8rem 2rem;
+      }
+
+      .add-section input,
+      .add-section textarea {
+        width: 100%;
+      }
+    }

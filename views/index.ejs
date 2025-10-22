@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FolioFusion - Create your own profile</title>
+  <link rel="stylesheet" href="/stylecreate.css">
+</head>
+<body>
+  <section class="profile home">
+    <div class="profile-header">
+      <h2>Create Your Developer Profile</h2>
+      <p>Fill in your details below to generate a personalized developer portfolio. Make sure to add your GitHub and LinkedIn URLs for maximum impact!</p>
+    </div>
+
+    <div class="add-section">
+      <form action="/create-profile" method="POST" class="profile-form">
+        <input name="username" placeholder="Choose a username" required />
+        <input name="name" placeholder="Full name" required />
+        <input name="github" placeholder="GitHub URL" />
+        <input name="linkedin" placeholder="LinkedIn URL" />
+        <textarea name="bio" placeholder="Short bio"></textarea>
+        <label>Choose Color Theme:</label>
+        <select name="theme">
+        <option value="default">Default</option>
+        <option value="dark">Dark</option>
+        <option value="pastel">Pastel</option>
+        <option value="sunset">Sunset</option>
+        </select>
+
+        <label>Choose Layout Style:</label>
+        <select name="layout">
+        <option value="classic">Classic</option>
+        <option value="compact">Compact</option>
+        <option value="modern">Modern</option>
+        </select>
+        <button type="submit">Generate Portfolio</button>
+      </form>
+    </div>
+  </section>
+  <script src="/public/main.js"></script>
+</body>
+</html>

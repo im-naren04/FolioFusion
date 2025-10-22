@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= user.name %> - Portfolio</title>
+  <link rel="stylesheet" href="/styleprofile.css">
+</head>
+<body class="<%= user.theme %> <%= user.layout %>">
+  <section class="profile">
+    <div class="profile-header">
+      <h2><%= user.name %></h2>
+      <p><%= user.bio %></p>
+      <div class="links">
+        <% if (user.github) { %>
+          <a href="<%= user.github %>" target="_blank">GitHub</a>
+        <% } %>
+        <% if (user.linkedin) { %>
+          <a href="<%= user.linkedin %>" target="_blank">LinkedIn</a>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- Add Section Form -->
+    <div class="add-section">
+      <h3>Add a New Section</h3>
+
+      <!-- Use hidden username key passed from backend -->
+      <form action="/profile/<%= userKey %>/add-section" method="POST">
+        <select name="sectionType" required>
+          <option value="">Select Type</option>
+          <option value="projects">Project</option>
+          <option value="skills">Skill</option>
+          <option value="experience">Experience</option>
+        </select>
+
+        <input name="title" placeholder="Section title" required />
+        <textarea name="description" placeholder="Details..."></textarea>
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+    <!-- Display Sections -->
+    <div class="sections">
+      <h3>Your Sections</h3>
+
+      <% if (user.sections && user.sections.length > 0) { %>
+        <% user.sections.forEach(s => { %>
+          <div class="section-card <%= s.sectionType %>">
+            <h4><%= s.title %></h4>
+            <p><%= s.description %></p>
+            <span class="tag"><%= s.sectionType %></span>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>No sections added yet.</p>
+      <% } %>
+    </div>
+  </section>
+</body>
+</html>
