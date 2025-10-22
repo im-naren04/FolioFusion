@@ -5,8 +5,12 @@
   <title><%= user.name %> - Portfolio</title>
   <link rel="stylesheet" href="/styleprofile.css">
 </head>
+
+<!-- Apply the user's selected theme and layout dynamically -->
 <body class="<%= user.theme %> <%= user.layout %>">
   <section class="profile">
+
+    <!-- Profile header and social links -->
     <div class="profile-header">
       <h2><%= user.name %></h2>
       <p><%= user.bio %></p>
@@ -20,11 +24,9 @@
       </div>
     </div>
 
-    <!-- Add Section Form -->
+    <!-- Add new section form -->
     <div class="add-section">
       <h3>Add a New Section</h3>
-
-      <!-- Use hidden username key passed from backend -->
       <form action="/profile/<%= userKey %>/add-section" method="POST">
         <select name="sectionType" required>
           <option value="">Select Type</option>
@@ -39,10 +41,9 @@
       </form>
     </div>
 
-    <!-- Display Sections -->
+    <!-- Display user-created sections -->
     <div class="sections">
       <h3>Your Sections</h3>
-
       <% if (user.sections && user.sections.length > 0) { %>
         <% user.sections.forEach(s => { %>
           <div class="section-card <%= s.sectionType %>">
